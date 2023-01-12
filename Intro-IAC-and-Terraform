@@ -1,0 +1,29 @@
+
+Cloud infrastructure ocmes with support for APIs good for automation
+Using scripts (shell or programming languages to yrty to automate infrastructure provisioning to deploy environments faster 
+and in a consistentet fashion by leveraging the API functionalities
+
+IAC tools
+    - Configuration Management: ansbile, puppet, chef, salt stack = used to install and manage software on existing infra 
+      resources (servers, dbs, networki devices, etc), version control (playbooks), idempotent (can run the code 
+      multiple times and everything you run it will only make changes that are necessary to bring the env into a define 
+      state w/o having to write any additional code)
+    - Provisioning Tools: terraform, cloudformation 
+    - Server Tramplating: docker, packer, vagrant = create a custom image of VM or container, they have all the required
+      software and dependencies installed on them, instead of updating the running instance like Ansible they update the 
+      image and then re-deploy a new instance using the updated image
+    
+Provisioning by making use of the management console of vaarious cloud providers. The better way to provision cloud infra
+is to codify the entire provisioning process = IAC (Infrastructure as Code)
+You can manage nearly any infra component as code (DB, networks, storage, app conf)
+It is not easy to manage, requires programming or dev skills to build and maintain, not easily reusable. That's like Terraform
+and Ansible help with code (easy to learn, human readable and maintain)
+
+HCL -hashicorp conf language is a simple declarative language
+.tf - extension
+
+Terraform works in 3 phases - init, plan and apply
+  init - identifies the providers to be used
+  plan - drafts a plan to get to the target state
+  apply - makes the necessary changes to required on the target environment to bring it to the desired state
+  
