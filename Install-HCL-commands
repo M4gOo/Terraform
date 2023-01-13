@@ -1,0 +1,34 @@
+https://www.terraform.io/  
+
+resource - could be a file on a local host, a VM on the cloud (EC2 instance), a S3 buckets, DynamoDB tables, etc
+
+
+======= HashiCorp Configuration Language (HCL) ======================
+
+ block arguments within {}, contains info about the infra plataform and set of resource within that platform
+ <block> "<parameters>" {
+    key1= value1
+    key2= value2
+ }
+ 
+  resource "local_file" "pet"  {
+    filename = '/root/pets.txt'
+    content = 'We love pets!'
+  }  
+  
+  resource - block name
+  local_file - fixed value and depends on the provider where you want to create the resource (local = provider, file = resource)
+  pet - resource name, can be called any name
+  filename, content - arguments in key pair value
+  
+  the resource type expects the provide some specific arguments which they expect
+  https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file.html
+  
+  terraform init - check the configuration file and initialize he working dir containing the .tf file. It will download the 
+                   plugin to be able to work on the resources decalred in .tf file
+  terraform plan - show the actions that will carried out by Terraform to create the resource
+  terraform apply - creation of the resource
+  terraform show - see details of the resource that was created
+  terraform destroy - delete the resource
+  
+  update the file terraform will delee and recreate the file -> immutable infrastructure
