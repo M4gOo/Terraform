@@ -1,0 +1,25 @@
+
+Providers
+  - official - aws,gcp,azure,local - maintained by HC
+  - verified - BigIP, Digital Ocean, Heroku - third-party - maintained by third-party
+  - community
+  
+  Plugins are downloaded in /root/terraform-projects/things-to-do/.terraform/plugins
+  
+  
+  ===================== Variable ===========================
+  
+ hardcoding value is not a good idea, re-use the  code
+ 
+ VARIABLE .TF                              
+  variable "filename" {                     
+    default = "/root/pets.txt"
+ }
+ 
+  MAIN.TF
+  resource "local_file" "pet" {
+    filename = var.filename
+    content = var.content
+  }
+  
+  after change update using terraform apply
