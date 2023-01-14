@@ -1,0 +1,14 @@
+
+the first apply it will create the terraform.tfstate 
+    state files maps the real-world infrastructure resources to the resource definition in the conf files
+    if plan and then apply it will delete the old ID and update the output also updates the ID
+      now the config and the state file are in sync
+     
+state file is a blueprint of all the resources that are for managers out there in the real world 
+state file helps when delete resource which order need to go first, because some other resources depends on the deleted resources
+terraform stores a cache of attribute values for all resources in the state ( terraform plan --refresh=false)
+importante to save terraform.tfstate file in a remote data store rather than on local copy, so can be shared between all team
+    Ex.: Amazon S3, hasicorp consul and terraform cloud 
+
+
+State file contains Sensitive Information
