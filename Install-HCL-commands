@@ -30,5 +30,7 @@ resource - could be a file on a local host, a VM on the cloud (EC2 instance), a 
   terraform apply - creation of the resource
   terraform show - see details of the resource that was created
   terraform destroy - delete the resource
+  terraform output - to print the value of the output variables; print all the output variable defined and all the 
+  files in the current configuration directory
   
   update the file terraform will delee and recreate the file -> immutable infrastructure
