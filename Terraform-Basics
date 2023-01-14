@@ -23,3 +23,33 @@ Providers
   }
   
   after change update using terraform apply
+  
+  
+ VARIABLE .TF                              
+  variable "filename" {                     
+    default = "/root/pets.txt"
+    type =  (optional - string, number, bool, list, map (map(string/numbers)), set(cannot be duplicate values), 
+    object(combine all variable types), tuple(similar to a list but can use elements of different variable types - tuplee([string ,number, bool])),
+    any(default))
+    description = (optional)
+    }
+    
+    instead to add variable values in a file we can useadd in the interactive mode or use flag -var 
+    or can declare variable (export TF_VAR_content="hello")
+    terraform apply -var "content=hello" -var "prefix=Mr"
+    
+    files -> .tfvars or tfvars.json
+    terraform apply -var file-name.tfvars
+    
+    
+    Terraform automatically loaded
+    terraform.tfvars
+    terraform.tfvars.json
+    *.auto.tfvars
+    *.auto.tfvars.json
+    
+    priority -> -var;  *.auto.tfvars  ; terraform.tfvars  ;  export TF_VAR_content="hello"
+    
+    
+    
+ 
