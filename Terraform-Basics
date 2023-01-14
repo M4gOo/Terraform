@@ -51,5 +51,36 @@ Providers
     priority -> -var;  *.auto.tfvars  ; terraform.tfvars  ;  export TF_VAR_content="hello"
     
     
+    ======================== Resource Attributes ===============================
+
+https://registry.terraform.io/providers/bees-oss/optimizely/latest/docs/resources/audience#id
+
+resource "local_file" "pet" {
+    filename = var.filename
+    content = "My favorite pet is ${random_pet.my-pet.id}"
+}
+
+resource "random_pet" "my-pet" {
+   prefix = var.prefix
+   separator = var.separator
+   length = var.length
+}
+  
+  
+  ====================  Resource Dependencies  =================================
+  
+  resource "local_file" "pet" {
+    filename = var.filename
+    content = "My favorite pet is Mr. Dog
+    depends_on = [                  -> this make sure is only created after the random_pet resource is created (explict dependency)
+      random_pet.my-pet
+     ]
+ }    
+
+resource "random_pet" "my-pet" {
+   prefix = var.prefix
+   separator = var.separator
+   length = var.length
+}
     
  
