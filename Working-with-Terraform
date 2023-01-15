@@ -19,3 +19,27 @@ lifecycle {
 }
 
 
+to avoid to be delete like Database is good to use when you use terraform apply
+prevent_destroy = true
+
+
+============  Datasources =====================
+https://registry.terraform.io/providers/hashicorp/local/latest/docs/data-sources/file
+
+datasources allows terraform to read attributes from resources whcih are provisioned outside its control
+Ex.: a bash script create a file in the same dir of the main.tf (configuration file)
+
+  resource "local_file" "pet"  {
+    filename = '/root/pets.txt'
+    content = data.local_file.dog.content
+  } 
+
+data "local_file" "dog" {
+    filename = '/root/dog.txt"
+}    
+
+
+Resource (managed resource) - create, update and destroy infra
+Data source (data resources) - only reads infra
+
+
