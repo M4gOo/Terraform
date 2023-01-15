@@ -1,0 +1,21 @@
+
+Mutable vs Immutable Infrastructure
+
+Example of mutable infrastructure - the underlying infrastructure reamins the same, but the software and the configuration 
+on these servers are changed as part of the update. This update can be trick because need to match the dependencies.
+Example od immutable Infrastructure - We can create new webservers with the updated software version and then delete 
+the old web server. If the upgrade fails for any reason. the old web server  will be left intact and the failed server will
+be removed. Terraform use this approach making easier to version the infra and roll back/forward between versions
+
+==============Lifecycle rule =======================
+to update a resource, you use terraform apply and then terraform first delete the older version and then create a new file,
+but this may not be a desirable approach in all cases, sometimes we need update first and then delete the old version or
+we may no want the resource to be deleted at all.
+
+in the resource block
+
+lifecycle {
+  create_before_destroy = true
+}
+
+
