@@ -32,5 +32,10 @@ resource - could be a file on a local host, a VM on the cloud (EC2 instance), a 
   terraform destroy - delete the resource
   terraform output - to print the value of the output variables; print all the output variable defined and all the 
   files in the current configuration directory
+  terraform validate - check the sintax is correct after write the configuration file (main.tf)
+  terraform fmt - scans the conf. files in the current working dir and fomats the code into a canonical format
+  terraform refresh - sync Terraform with the real-world infra. It is usefull to determine what actions to take during the 
+  next apply, not modify any infrastructure resource but it will modify the state file
+  terraform graph - create a visual representation of the dependenciees, dot, better visualize in Graphviz
   
   update the file terraform will delee and recreate the file -> immutable infrastructure
