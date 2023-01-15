@@ -43,3 +43,47 @@ Resource (managed resource) - create, update and destroy infra
 Data source (data resources) - only reads infra
 
 
+============ Meta Arguments ===========
+Exemples - depends_on, lifecycle, count, for_each 
+
+createmultiple instances of the same resource
+can be used within any resource block to change the behavior or resource
+the count argument when you delete some resources can create some conflits, unecessary delete resource, to sort this out use 
+the meta argument for_each
+for_each only works with a map or a set, so then the output wont be indentify by index like count whic create a list
+
+-----count---------------
+main.tf - conf file
+ resource "local_file" "pet"  {
+    filename = var.filename[count.index]
+    count = lenght(var.filename)
+ }
+ 
+ variable.tf
+ variable "filename"  {
+    default = [
+      "/root/pets.txt",
+      "/root/dogs.txt",
+      "/root/cats.txt"
+    ]
+ }
+
+-----for_each---------------
+main.tf - conf file
+ resource "local_file" "pet"  {
+    filename = each.value
+    for_each=var.filename         type=list(string) -> for_each = toset(var.filename)
+ } 
+ 
+ variable.tf
+ variable "filename"  {
+    type=set(string)              type=list(string) -> for_each = toset(var.filename)
+    default = [
+      "/root/pets.txt",
+      "/root/dogs.txt",
+      "/root/cats.txt"
+    ]
+ }
+ 
+ 
+ 
