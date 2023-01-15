@@ -13,4 +13,4 @@ importante to save terraform.tfstate file in a remote data store rather than on 
 
 State file contains Sensitive Information
 best practice to store Terraform configuration files (main.tf) in distributed version control system (github, gitlab, bitbucket)
-state files (terraform.tfstate) in remote backend systems (amazon S3, terraform cloud, Azure/google storage, ...) 
+state files (terraform.tfstate) stores in remote backend systems (amazon S3, terraform cloud, Azure/google storage, ...) 
