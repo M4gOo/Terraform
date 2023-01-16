@@ -42,3 +42,12 @@ there are no servers that the users have to manage
 high availability replicated across multiple regions
 stores data in the form key value pairs
 
+==============EC2===============
+virtual machines 
+Elastic compute cloud instance - EC2
+they have pre-configured templates (AMIs - amazon machine image)
+
+general  instance is more commonly used type 
+T2,T3,M5, etc tey are type of general instance and they have different sizes (vCPU and memory GB)
+EBS volume to be attached to EC2 instance 
+
