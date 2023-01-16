@@ -18,3 +18,10 @@ the S3 service
 
 IAM role con provide access to an IAM user beloging to another AWS acc, provide access to applications to interact with services
 in AWS and provide access to users managed outside AWS
+
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs  -> filter IAM
+good practice for terraform access programmactic
+    to not hardcode the credential in the conf file (this file it will be in version control), so save in
+/home/user/.aws/config/credentials (this is inside home dir of the user)
+    another is making use of env variables in conf file (export AWS_ACCESS_KEY_ID ...)
+
