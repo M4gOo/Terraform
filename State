@@ -1,10 +1,13 @@
 
+
+
 the first apply it will create the terraform.tfstate 
     state files maps the real-world infrastructure resources to the resource definition in the conf files
     if plan and then apply it will delete the old ID and update the output also updates the ID
       now the config and the state file are in sync
      
 state file is a blueprint of all the resources that are for managers out there in the real world 
+it is used to map resources in the conf file to the real world infrastructure
 state file helps when delete resource which order need to go first, because some other resources depends on the deleted resources
 terraform stores a cache of attribute values for all resources in the state ( terraform plan --refresh=false)
 importante to save terraform.tfstate file in a remote data store rather than on local copy, so can be shared between all team
@@ -14,3 +17,11 @@ importante to save terraform.tfstate file in a remote data store rather than on 
 State file contains Sensitive Information
 best practice to store Terraform configuration files (main.tf) in distributed version control system (github, gitlab, bitbucket)
 state files (terraform.tfstate) stores in remote backend systems (amazon S3, terraform cloud, Azure/google storage, ...) 
+remote state backends supports State locking when someone is update is locked the state file to avoid any conflict 
+remote state backends is mroe secuyre than local state
+
+state commands - https://developer.hashicorp.com/terraform/cli/commands/state/list
+vi terraform.tfstate (wrong)
+terraform state show aws_s3_bucket_hr (correct)
+
+
