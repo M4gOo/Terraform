@@ -46,6 +46,8 @@ stores data in the form key value pairs
 virtual machines 
 Elastic compute cloud instance - EC2
 they have pre-configured templates (AMIs - amazon machine image)
+AMI can be customize using Packer tool that can do this in a declarative way.
+With this ami no need to use user data for remote-exec provisioner to install, for example, nginx.
 
 general  instance is more commonly used type 
 T2,T3,M5, etc tey are type of general instance and they have different sizes (vCPU and memory GB)
