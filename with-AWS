@@ -20,8 +20,25 @@ IAM role con provide access to an IAM user beloging to another AWS acc, provide 
 in AWS and provide access to users managed outside AWS
 
 https://registry.terraform.io/providers/hashicorp/aws/latest/docs  -> filter IAM
-good practice for terraform access programmactic
+good practice for terraform IAM access 
     to not hardcode the credential in the conf file (this file it will be in version control), so save in
 /home/user/.aws/config/credentials (this is inside home dir of the user)
     another is making use of env variables in conf file (export AWS_ACCESS_KEY_ID ...)
+    
+============= S3 ===============
+S3 - simple storage service
+data in S3 is stored in the form of an S3 bucket (bucket = container/dir)
+must be unique name, because aws creates a DNS name for it
+should be DNS compliant name = no uppercase or underscores
+max file size 5TB
+
+any object in an S3 bucket consists of an object data (key = value) and metadata (detail about the object =>owner, size, last modified)
+to a user/group have access a bucket, it necessary a bucket policy
+
+========== DynamoDB ===============
+no SQL DB provided by AWS
+full managed by AWS
+there are no servers that the users have to manage
+high availability replicated across multiple regions
+stores data in the form key value pairs
 
