@@ -1,0 +1,20 @@
+
+========= Setup an AWS Account ==========
+
+https://aws.amazon.com/
+
+
+======== IAM ==================
+management console - only root can access 
+IAM policy - assign privileges, json format
+IAM Group - can be made to assign policy instead users individually, but even they are in the group you can add other permissions
+individually to a user.
+
+To services have access to each other (example S3 to EC2), by default they are not connect, must create a IAM role
+IAM role - allow securely grant access to an AWS service to act on other AWS service in the account
+Ex.: create a S3 access role to be applied on the EC2 service, with the role we can attach the same IAM policy that, for example,
+you create for the developer group. Once this role is attached to an EC2 instance, that instance should have complete access to 
+the S3 service
+
+IAM role con provide access to an IAM user beloging to another AWS acc, provide access to applications to interact with services
+in AWS and provide access to users managed outside AWS
