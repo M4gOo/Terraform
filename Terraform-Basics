@@ -106,6 +106,14 @@ output "<variable_name>" {
   <arguments>
 }
 
- 
+
+============ Taint ==============
+when a resource creation fails for any reason it will be marked as tainted (can check using terraform plan), terraform will attempt
+to ecreate it during the subsequent apply
+
+========= Debbuging ==============
+export TF_LOG_PATH=/tmp/terraform.log
+
+unset TF_LOG_PATH
 
 
