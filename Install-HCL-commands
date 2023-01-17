@@ -37,5 +37,6 @@ resource - could be a file on a local host, a VM on the cloud (EC2 instance), a 
   terraform refresh - sync Terraform with the real-world infra. It is usefull to determine what actions to take during the 
   next apply, not modify any infrastructure resource but it will modify the state file
   terraform graph - create a visual representation of the dependenciees, dot, better visualize in Graphviz
+  terraform workspace
   
   update the file terraform will delee and recreate the file -> immutable infrastructure
